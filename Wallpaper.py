@@ -37,9 +37,13 @@ def createBMP(url, img):
     return img+".bmp"
     
 def main(url):
-    c = geturl(url)
-    bmp = createBMP(c[0], c[1])
-    setWallpaper(bmp)
-    
+    while True:
+        try:
+            c = geturl(url)
+            bmp = createBMP(c[0], c[1])
+            setWallpaper(bmp)
+            break
+        except:time.sleep(60)
+
 if __name__ == '__main__':
-    main(url)
+        try:main(url)
