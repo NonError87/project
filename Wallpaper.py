@@ -2,6 +2,7 @@
 
 import os
 import re
+import time
 import win32api
 import win32con
 import win32gui
@@ -42,8 +43,8 @@ def main(url):
             c = geturl(url)
             bmp = createBMP(c[0], c[1])
             setWallpaper(bmp)
-            break
+            return
         except:time.sleep(60)
 
 if __name__ == '__main__':
-        try:main(url)
+    main(url)
